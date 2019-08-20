@@ -1,12 +1,16 @@
 const express = require('express');
 const routes = require('./routes');
-const mongoose = require('mongoose');
+const connectDB = require('./config/db.config');
+
 const app = express();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// connect to mongo
+connectDB();
 
 // Routes
 app.use(routes);
