@@ -335,8 +335,8 @@ button {
 }
 
 .card {
-	width: 200px;
 	display: flex;
+	width: 25%;
 	flex-direction: column;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 	white-space: nowrap;
@@ -395,13 +395,11 @@ button {
 	.navbar .welcome {
 		display: none;
 	}
-
 	.card-registry {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
 	}
-
 	.card {
 		margin: 20px 0;
 		width: 80%;

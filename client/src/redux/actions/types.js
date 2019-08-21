@@ -9,7 +9,8 @@ const types = {
     LOGIN_FAIL: 'LOGIN_FAIL',
     LOGOUT: 'LOGOUT',
     LOAD_COMPANIES: 'LOAD_COMPANIES',
-    LOAD_ERROR: 'LOAD_ERROR'
+    LOAD_ERROR: 'LOAD_ERROR',
+    GET_COMPANY: 'GET_COMPANY'
 }
 
 export default types;

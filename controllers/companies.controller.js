@@ -22,10 +22,19 @@ const companyController = {
             res.status(500).send('Server Error');
         }
     },
+    getOneCompany: async (req, res) => {
+        let { name } = req.params;
+        name = name.split('-').join(' ');
+        try {
+            const company = await Company.findOne({ name });
+            res.json(company);
+        } catch (err) {
+            res.status(500).send('Server Error');
+        }
+    },
     findOneAndUpdate: async (req, res) => {
         let { name } = req.params;
-        console.log(name.split('_').join(' '), req.body);
-        name = name.split('_').join(' ');
+        name = name.split('-').join(' ');
         try {
             const company = await Company.findOneAndUpdate({ name }, req.body, { new: true });
             res.json(company);

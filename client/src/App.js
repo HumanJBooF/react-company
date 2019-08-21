@@ -8,6 +8,7 @@ import Register from './components/auth/Register.component';
 import Alert from './components/Alert/Alert.component';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.component';
 import RegistryList from './components/RegistryList/RegistryList.component';
+import CompanyInfo from './components/CompanyInfo/CompanyInfo.component';
 // @redux
 import { Provider } from 'react-redux';
 import store from './redux/store';
@@ -35,6 +36,7 @@ const App = () => {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <PrivateRoute exact path='/registry' component={RegistryList} />
+              <PrivateRoute exact path='/registry/:name' component={CompanyInfo} />
             </Switch>
           </div>
         </>

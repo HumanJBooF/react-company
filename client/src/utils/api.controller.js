@@ -11,6 +11,7 @@ const apiController = {
     loadUser: () => axios.get('/api/auth', config),
     loginUser: user => axios.post('/api/auth/login', user, config),
     getCompanyData: () => axios.get('/api/company', config),
+    getOneCompany: name => axios.get(`/api/company/${name}`, config),
     editCompanyDate: (name, edits) => axios.post(`/api/company/${name}/edit`, edits, config),
     setToken: token =>
         token
