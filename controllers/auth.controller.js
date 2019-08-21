@@ -15,8 +15,8 @@ const authController = {
             res.status(500).send('Server Error');
         }
     },
-    // @route POST api/auth
-    authenticateUser: async (req, res) => {
+    // @route POST api/auth/login
+    loginUser: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
@@ -32,7 +32,7 @@ const authController = {
                     .status(400)
                     .json({ errors: [{ msg: 'Invalid Credentials' }] });
             }
-
+            // comparing passwords with bcryptjs
             const isMatch = await bcrypt.compare(password, user.password);
 
             if (!isMatch) {
