@@ -328,6 +328,43 @@ button {
 	text-align: center;
 }
 
+.card-registry {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.card {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+	white-space: nowrap;
+	background: var(--dark-color);
+	color: white;
+}
+
+.card-section {
+	height: 39%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 20px 0;
+}
+
+.card-footer {
+	background: var(--light-color);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border: 1pt solid var(--primary-color);
+	color: var(--dark-color);
+	cursor: pointer;
+}
+
 @media (max-width: 700px) {
 	.container {
 		margin-top: 8rem;
@@ -357,5 +394,17 @@ button {
 	}
 	.navbar .welcome {
 		display: none;
+	}
+
+	.card-registry {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+	}
+
+	.card {
+		margin: 20px 0;
+		width: 80%;
+		text-align: center;
 	}
 }

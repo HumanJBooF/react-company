@@ -7,7 +7,9 @@ const types = {
     AUTH_ERROR: 'AUTH_ERROR',
     LOGIN_SUCCESS: 'LOGIN_SUCCESS',
     LOGIN_FAIL: 'LOGIN_FAIL',
-    LOGOUT: 'LOGOUT'
+    LOGOUT: 'LOGOUT',
+    LOAD_COMPANIES: 'LOAD_COMPANIES',
+    LOAD_ERROR: 'LOAD_ERROR'
 }
 
 export default types;
