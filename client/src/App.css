@@ -365,6 +365,16 @@ button {
 	cursor: pointer;
 }
 
+.company-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 85vh;
+	width: 100%;
+	border: 1pt solid var(--dark-color);
+}
+
 @media (max-width: 700px) {
 	.container {
 		margin-top: 8rem;

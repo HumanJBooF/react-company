@@ -19,7 +19,13 @@ const loadOneCompany = name => async dispatch => {
     }
 }
 
+const leaveCompany = history => async dispatch => {
+    dispatch({ type: types.LEAVE_COMPANY });
+    history.push('/registry');
+}
+
 export {
     loadAllCompanies,
-    loadOneCompany
+    loadOneCompany,
+    leaveCompany
 }

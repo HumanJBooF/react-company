@@ -10,7 +10,8 @@ const types = {
     LOGOUT: 'LOGOUT',
     LOAD_COMPANIES: 'LOAD_COMPANIES',
     LOAD_ERROR: 'LOAD_ERROR',
-    GET_COMPANY: 'GET_COMPANY'
+    GET_COMPANY: 'GET_COMPANY',
+    LEAVE_COMPANY: 'LEAVE_COMPANY'
 }
 
 export default types;

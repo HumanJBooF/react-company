@@ -3,6 +3,7 @@ import types from '../actions/types';
 const initialState = {
     companies: [],
     company: {},
+    isImpersonating: false,
     error: {}
 }
 
@@ -23,7 +24,14 @@ const companyReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 companies: [],
-                company: payload
+                company: payload,
+                isImpersonating: true
+            }
+        case types.LEAVE_COMPANY:
+            return {
+                ...state,
+                company: {},
+                isImpersonating: false
             }
         default:
             return state;

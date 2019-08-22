@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
@@ -6,15 +7,20 @@ import { loadAllCompanies } from '../../redux/actions/company.actions';
 // @components
 import RegistryCard from '../RegistryCard/RegistryCard.component';
 
-const RegistryList = ({ loadAllCompanies, companies }) => {
+const RegistryList = ({ loadAllCompanies, company }) => {
     useEffect(() => {
         loadAllCompanies();
     }, [loadAllCompanies]);
+
+    if (company.isImpersonating) {
+        return <Redirect to={`/registry/${company.company.name.split(' ').join('-')}`} />
+    }
+
     return (
         <>
             <div className='title'>Companies</div>
             <div className='card-registry my-3'>
-                {companies.map((obj, i) =>
+                {company.companies.map((obj, i) =>
                     <RegistryCard
                         name={obj.name}
                         revenue={obj.revenue}
@@ -32,6 +38,6 @@ RegistryList.propTypes = {
     loadAllCompanies: PropTypes.func.isRequired
 };
 
-const mapStateToProps = ({ company: { companies } }) => ({ companies });
+const mapStateToProps = ({ company }) => ({ company });
 
 export default connect(mapStateToProps, { loadAllCompanies })(RegistryList);
