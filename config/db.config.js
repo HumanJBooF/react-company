@@ -5,8 +5,8 @@ const dbConfigs = { useCreateIndex: true, useNewUrlParser: true, useFindAndModif
 let URI;
 
 (process.env.NODE_ENV === 'production')
-    ? URI = process.env.MONGO_URI_PROD
-    : URI = process.env.MONGO_URI_LOCAL
+    ? URI = process.env.MONGODB_URI
+    : URI = process.env.MONGODB_URI_LOCAL
 
 const connectDB = async () => {
     try {
