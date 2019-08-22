@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 // @redux
@@ -18,6 +18,7 @@ const CompanyInfo = ({
     leaveCompany,
     isEditingClick
 }) => {
+
     useEffect(() => {
         loadOneCompany(match.params.name);
     }, [loadOneCompany, match.params.name]);
@@ -66,6 +67,10 @@ CompanyInfo.propTypes = {
     company: PropTypes.object.isRequired
 }
 
-const mapStateToProps = ({ company: { company, isEditing, isImpersonating } }) => ({ company, isEditing, isImpersonating });
+const mapStateToProps = ({ company: { company, isEditing, isImpersonating } }) => ({
+    company,
+    isEditing,
+    isImpersonating
+});
 
 export default connect(mapStateToProps, { loadOneCompany, leaveCompany, isEditingClick })(CompanyInfo);

@@ -1,6 +1,5 @@
 import types from './types';
 import API from '../../utils/api.controller';
-import { setAlert } from './alert.actions';
 
 const loadAllCompanies = () => async dispatch => {
     try {

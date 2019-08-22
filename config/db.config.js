@@ -2,9 +2,15 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const dbConfigs = { useCreateIndex: true, useNewUrlParser: true, useFindAndModify: false };
 
+let URI;
+
+(process.env.NODE_ENV === 'production')
+    ? URI = process.env.MONGO_URI_PROD
+    : URI = process.env.MONGO_URI_LOCAL
+
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI, dbConfigs);
+        await mongoose.connect(URI, dbConfigs);
 
         console.log('Mongo Connected');
     } catch (err) {
