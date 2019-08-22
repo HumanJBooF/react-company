@@ -10,7 +10,7 @@ import RegistryCard from '../RegistryCard/RegistryCard.component';
 const RegistryList = ({ loadAllCompanies, company }) => {
     useEffect(() => {
         loadAllCompanies();
-    }, [loadAllCompanies]);
+    }, [loadAllCompanies, company]);
 
     if (company.isImpersonating) {
         return <Redirect to={`/registry/${company.company.name.split(' ').join('-')}`} />
@@ -34,7 +34,7 @@ const RegistryList = ({ loadAllCompanies, company }) => {
 };
 
 RegistryList.propTypes = {
-    companies: PropTypes.array,
+    company: PropTypes.object,
     loadAllCompanies: PropTypes.func.isRequired
 };
 
