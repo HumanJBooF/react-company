@@ -9,7 +9,6 @@
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "express-validator": "^6.1.1",
-    "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.9"
   },
@@ -18,13 +17,11 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
