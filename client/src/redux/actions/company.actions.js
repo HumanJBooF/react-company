@@ -1,5 +1,6 @@
 import types from './types';
 import API from '../../utils/api.controller';
+import { setAlert } from './alert.actions';
 
 const loadAllCompanies = () => async dispatch => {
     try {
@@ -24,8 +25,23 @@ const leaveCompany = history => async dispatch => {
     history.push('/registry');
 }
 
+const isEditingClick = () => async dispatch => {
+    dispatch({ type: types.EDITING })
+}
+
+const editCompany = data => async dispatch => {
+    try {
+        await API.editCompanyData(data);
+        dispatch({ type: types.EDIT_COMPANY });
+    } catch (err) {
+        dispatch({ type: types.LOAD_ERROR, payload: { status: err.response.status } });
+    }
+}
+
 export {
     loadAllCompanies,
     loadOneCompany,
-    leaveCompany
+    leaveCompany,
+    editCompany,
+    isEditingClick
 }

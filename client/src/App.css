@@ -13,7 +13,7 @@
 }
 
 body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Slabo 27px', serif;
 	font-size: 1rem;
 	line-height: 1.6;
 	background-color: #fff;
@@ -120,7 +120,7 @@ img {
 }
 
 .my {
-	margin: 0.5rem 0;
+	margin: 0.2rem 0;
 }
 
 .my-1 {
@@ -260,6 +260,8 @@ img {
 .form input[type='email'],
 .form input[type='password'],
 .form input[type='date'],
+.form input[type='tel'],
+.form input[type='number'],
 .form select,
 .form textarea {
 	display: block;
@@ -314,6 +316,9 @@ button {
 .landing {
 	position: relative;
 	height: 100vh;
+	background-image: url('./assets/img/landing.png');
+	background-size: cover;
+	background-position: center;
 }
 
 .landing-inner {
@@ -328,6 +333,12 @@ button {
 	text-align: center;
 }
 
+.registry-background {
+	background-image: url('./assets/img/ocean.jpeg');
+	background-size: cover;
+	height: 100%;
+}
+
 .card-registry {
 	display: flex;
 	justify-content: space-between;
@@ -340,8 +351,8 @@ button {
 	flex-direction: column;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 	white-space: nowrap;
-	background: var(--dark-color);
-	color: white;
+	align-items: center;
+	border: 1pt solid var(--dark-color);
 }
 
 .card-section {
@@ -355,14 +366,16 @@ button {
 }
 
 .card-footer {
-	background: var(--light-color);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 	border: 1pt solid var(--primary-color);
-	color: var(--dark-color);
 	cursor: pointer;
+}
+
+.card-footer:hover {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 .company-info {
@@ -370,9 +383,24 @@ button {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 85vh;
+	height: 100vh;
 	width: 100%;
+	background-image: url('./assets/img/city-blue.jpg');
+}
+
+.leave:hover {
+	box-shadow: 0 0 20px var(--primary-color);
+}
+
+.edit-btn:hover {
+	box-shadow: 0 0 20px var(--primary-color);
+}
+.edit-form {
 	border: 1pt solid var(--dark-color);
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 @media (max-width: 700px) {
@@ -409,6 +437,7 @@ button {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
+		margin-top: 20%;
 	}
 	.card {
 		margin: 20px 0;

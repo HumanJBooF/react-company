@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 import { login } from '../../redux/actions/auth.actions';
+// @components
+import Alert from '../Alert/Alert.component';
 
 const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
@@ -28,7 +30,8 @@ const Login = ({ login, isAuthenticated }) => {
     }
 
     return (
-        <>
+        <div className='container'>
+            <Alert />
             <h1 className='large text-primary'>Sign in</h1>
             <p className='lead'>
                 <i className='fas fa-user' />
@@ -59,7 +62,7 @@ const Login = ({ login, isAuthenticated }) => {
             <p className='my-1'>
                 Don't have an account? <Link to='/register'>Sign Up</Link>
             </p>
-        </>
+        </div>
     )
 }
 

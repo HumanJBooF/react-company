@@ -33,12 +33,11 @@ const companyController = {
         }
     },
     findOneAndUpdate: async (req, res) => {
-        let { name } = req.params;
-        name = name.split('-').join(' ');
+        let { name } = req.body;
         try {
             const company = await Company.findOneAndUpdate({ name }, req.body, { new: true });
-            res.json(company);
-        } catch (error) {
+            res.json({ message: 'Updated! You will now be redirected and removed as an impersonator' });
+        } catch (err) {
             res.status(500).send('Server Error');
         }
     }

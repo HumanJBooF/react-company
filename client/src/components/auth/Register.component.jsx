@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { register } from '../../redux/actions/auth.actions';
 import { setAlert } from '../../redux/actions/alert.actions';
+// @components
+import Alert from '../Alert/Alert.component';
 
 const Register = ({ register, setAlert, isAuthenticated }) => {
     const [formData, setFormData] = useState({
@@ -35,7 +37,8 @@ const Register = ({ register, setAlert, isAuthenticated }) => {
     }
 
     return (
-        <>
+        <div className='container'>
+            <Alert />
             <h1 className='large text-primary'>Sign Up</h1>
             <p className='lead'>
                 <i className='fas fa-user' />
@@ -86,7 +89,7 @@ const Register = ({ register, setAlert, isAuthenticated }) => {
             <p className='my-1'>
                 Already have an account? <Link to='/login'>Sign In</Link>
             </p>
-        </>
+        </div>
     )
 }
 

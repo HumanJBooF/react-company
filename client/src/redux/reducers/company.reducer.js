@@ -4,6 +4,7 @@ const initialState = {
     companies: [],
     company: {},
     isImpersonating: false,
+    isEditing: false,
     error: {}
 }
 
@@ -27,6 +28,18 @@ const companyReducer = (state = initialState, { type, payload }) => {
                 company: payload,
                 isImpersonating: true
             }
+        case types.EDITING:
+            return {
+                ...state,
+                isEditing: true
+            }
+        case types.EDIT_COMPANY:
+            return {
+                ...state,
+                isEditing: false,
+                isImpersonating: false
+            }
+        case types.LOGOUT:
         case types.LEAVE_COMPANY:
             return {
                 ...state,

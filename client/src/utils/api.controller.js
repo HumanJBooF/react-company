@@ -12,7 +12,7 @@ const apiController = {
     loginUser: user => axios.post('/api/auth/login', user, config),
     getCompanyData: () => axios.get('/api/company', config),
     getOneCompany: name => axios.get(`/api/company/${name}`, config),
-    editCompanyDate: (name, edits) => axios.post(`/api/company/${name}/edit`, edits, config),
+    editCompanyData: data => axios.post('/api/company/edit', data, config),
     setToken: token =>
         token
             ? axios.defaults.headers.common['x-auth-token'] = token

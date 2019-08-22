@@ -17,7 +17,7 @@ const RegistryList = ({ loadAllCompanies, company }) => {
     }
 
     return (
-        <>
+        <div className='registry-background'>
             <div className='title'>Companies</div>
             <div className='card-registry my-3'>
                 {company.companies.map((obj, i) =>
@@ -29,7 +29,7 @@ const RegistryList = ({ loadAllCompanies, company }) => {
                     />
                 )}
             </div>
-        </>
+        </div>
     )
 };
 

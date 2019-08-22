@@ -7,6 +7,6 @@ router.get('/seed', seedDb);
 router.get('/', middleware, getAllCompanyData);
 router.get('/:name', getOneCompany);
 
-router.post('/:name/edit', middleware, findOneAndUpdate);
+router.post('/edit', middleware, findOneAndUpdate);
 
 module.exports = router;

@@ -5,7 +5,6 @@ import Navbar from './components/Navbar/Navbar.component';
 import Landing from './components/Landing/Landing.component';
 import Login from './components/auth/Login.component';
 import Register from './components/auth/Register.component';
-import Alert from './components/Alert/Alert.component';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.component';
 import RegistryList from './components/RegistryList/RegistryList.component';
 import CompanyInfo from './components/CompanyInfo/CompanyInfo.component';
@@ -30,15 +29,12 @@ const App = () => {
         <>
           <Navbar />
           <Route exact path='/' component={Landing} />
-          <div className='container'>
-            <Alert />
-            <Switch>
-              <Route exact path='/register' component={Register} />
-              <Route exact path='/login' component={Login} />
-              <PrivateRoute exact path='/registry' component={RegistryList} />
-              <PrivateRoute exact path='/registry/:name' component={CompanyInfo} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login} />
+            <PrivateRoute exact path='/registry' component={RegistryList} />
+            <PrivateRoute exact path='/registry/:name' component={CompanyInfo} />
+          </Switch>
         </>
       </Router>
     </Provider>
