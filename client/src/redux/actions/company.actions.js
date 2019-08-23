@@ -6,7 +6,7 @@ const loadAllCompanies = () => async dispatch => {
         const res = await API.getCompanyData();
         dispatch({ type: types.LOAD_COMPANIES, payload: res.data });
     } catch (err) {
-        dispatch({ type: types.LOAD_ERROR, payload: { status: err.response.status ? err.response.status : 'Server Error' } });
+        dispatch({ type: types.LOAD_ERROR, payload: { status: err.response.status } });
     }
 }
 
