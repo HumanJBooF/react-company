@@ -47,6 +47,7 @@ const CompanyInfo = ({
                     handleClick={handleClick}
                 />
                 : <EditForm
+                    _id={company._id}
                     name={company.name}
                     revenue={company.revenue}
                     phone={company.phone}

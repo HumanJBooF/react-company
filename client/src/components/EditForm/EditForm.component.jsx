@@ -32,9 +32,16 @@ const EditForm = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        props.editCompany(formData);
+        const data = {
+            _id: props._id,
+            name,
+            revenue,
+            phone,
+            address,
+            employee_count
+        };
+        props.editCompany(data);
     }
-
     return (
         <form className='form p bg-light edit-form' onSubmit={handleSubmit}>
             <label>Company Name</label>

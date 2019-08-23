@@ -33,9 +33,9 @@ const companyController = {
         }
     },
     findOneAndUpdate: async (req, res) => {
-        let { name } = req.body;
+        let { _id } = req.body;
         try {
-            await Company.findOneAndUpdate({ name }, req.body, { new: true });
+            await Company.findOneAndUpdate({ _id }, req.body, { new: true });
             res.json({ msg: 'Updated!' });
         } catch (err) {
             res.status(500).send('Server Error');
